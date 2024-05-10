@@ -553,3 +553,21 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.text-blue-200 {
+  --tw-text-opacity: 1;
+  color: rgb(191 219 254 / var(--tw-text-opacity));
+}

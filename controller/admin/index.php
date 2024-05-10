@@ -1,2 +1,3 @@
 <?php 
-echo "wassup";
+
+require view("admin/index.php");

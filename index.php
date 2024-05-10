@@ -2,8 +2,11 @@
 
 session_start();
 
+const BASE_PATH = __DIR__ . '/./';
+
+
 require "core/functions.php";
-require "core/Router.php";
+require base_path("core/Router.php");
 
 $router = new Router();
 
