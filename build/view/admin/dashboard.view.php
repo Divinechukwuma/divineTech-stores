@@ -6,9 +6,18 @@
     <title>divineTech-stores</title>
     <link rel="stylesheet" href="build/css/style.css">
 </head>
-<body>
+<body class="min-h-full">
 
-<div class="rounded-full bg-red-300 text-blue-200 font-extrabold">wassup</div>
+<nav>
+    <div class="width-full bg-blood p-5">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</nav>
 
 </body>
 </html>
