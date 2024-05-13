@@ -18,5 +18,5 @@ function base_path($path){
 
 function view($path)
 {
-    return base_path('build/view/' . $path);
+    return base_path('view/' . $path);
 }
