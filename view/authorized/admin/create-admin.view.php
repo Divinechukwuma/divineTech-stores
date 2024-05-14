@@ -4,7 +4,7 @@
 <section class="p-5">
     <h1 class="mb-3"> <strong>Add Admin</strong></h1>
 
-    <form method="POST" name="_method">
+    <form method="POST" action="/webapps/divineTech-store/store-admin">
         <div class="mb-3">
             <label for="Name" class="form-label">Your name</label>
             <input type="name" class="form-control" id="name" aria-describedby="emailHelp" name="name">

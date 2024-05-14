@@ -5,5 +5,3 @@
     <h1 class="mb-3"> <strong>PAGE NOT FOUND</strong></h1>
     <a href="/webapps/divineTech-store/"><button class="rounded bg-success border-light">Return home</button></a>
 </section>
-
-<?php require view('partials/footer.php') ?>
