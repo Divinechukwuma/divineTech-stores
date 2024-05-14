@@ -4,10 +4,12 @@ $db = new Database($config['database']);
 
 $name = $_POST['name'];
 $password = $_POST['password'];
+$email = $_POST['email'];
 
-$db->query('INSERT INTO admin (name,password) VALUES(:name,:password)',[
+$db->query('INSERT INTO admin (name,password,email) VALUES(:name,:password,:email)',[
     'name' => $name,
-    'password' => password_hash($password, PASSWORD_BCRYPT)
+    'password' => password_hash($password, PASSWORD_BCRYPT),
+    'email' => $email
 ]);
 
 header('location: /webapps/divineTech-store/admin');
