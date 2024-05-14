@@ -5,13 +5,14 @@
     <h1 class="mb-3"> <strong>Add Admin</strong></h1>
 
     <form method="POST" action="/webapps/divineTech-store/store-admin">
+        <input type="hidden" name="_method" value="POST">
         <div class="mb-3">
-            <label for="Name" class="form-label">Your name</label>
+            <label for="name" class="form-label">Your name</label>
             <input type="name" class="form-control" id="name" aria-describedby="emailHelp" name="name">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" class="form-control" id="exampleInputPassword1" name='password'>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
