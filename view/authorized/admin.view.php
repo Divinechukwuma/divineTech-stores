@@ -17,11 +17,11 @@
         </thead>
         <tbody class="table-group-divider">
             <tr>
-                <?php foreach($admins as $admin) : ?>
+                <?php foreach($admins as $row) : ?>
 
                 <th><?= $sn++ ?></th>
-                <td>Mark</td>
-                <td>@mdo</td>
+                <td><?php $row['name'] ?></td>
+                <td><?php $row['email']?></td>
                 <td><button class="bg-success text-light text-center rounded">Update Admin</button></td>
                 <td><button class="bg-danger text-light text-center rounded">Delete Admin</button></td>
 
