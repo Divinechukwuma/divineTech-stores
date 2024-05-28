@@ -3,15 +3,17 @@
 $config = require 'config.php';
 $db = new Database($config['database']);
 
+// dd($_SERVER);
+
 
 // Query to fetch admin data based on provided id, name, and email
-$admins = $db->query("SELECT * FROM admin WHERE id = :id, name = :name, email = :email",[
-         'id' => $id,
-         'name' => $name,
-         'email'=> $email
-]); // Assuming you want to fetch all matching rows
+$admins = $db->query("SELECT * FROM admin WHERE  AdminName = :AdminName, AdminEmail = :AdminEmail, id = :id", [
 
-// Assuming you want to display the serial number (sn)
+    'AdminName' => $_GET['AdminName'],
+    'AdminEmail' => $_GET['AdminEmail'],
+    'id' => $_GET['id']
+
+]);
 $sn = 1;
 
 // Include the view file
