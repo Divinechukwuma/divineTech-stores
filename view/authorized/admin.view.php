@@ -17,15 +17,12 @@
         </thead>
         <tbody class="table-group-divider">
             <tr>
-                <?php foreach($posts as $row) : ?>
 
                 <th><?= $sn++ ?></th>
-                <td><?php $row['AdminName'] ?></td>
-                <td><?php $row['AdminEmail']?></td>
+                <td><?= htmlspecialchars( $admin['name']) ?></td>
+                <td><?= htmlspecialchars($admins['email']) ?></td>
                 <td><button class="bg-success text-light text-center rounded">Update Admin</button></td>
                 <td><button class="bg-danger text-light text-center rounded">Delete Admin</button></td>
-
-                <?php endforeach; ?>
             </tr>
         </tbody>
     </table>

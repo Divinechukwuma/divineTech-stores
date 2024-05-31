@@ -12,4 +12,6 @@ $db->query('INSERT INTO admin (name,password,email) VALUES(:name,:password,:emai
     'email' => htmlspecialchars($email)
 ]);
 
+
+
 header('location: /webapps/divineTech-store/admin');
