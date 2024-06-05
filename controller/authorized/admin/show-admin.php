@@ -1,22 +1,22 @@
 <?php
-base_path('core/session.php');
 $config = require 'config.php';
 $db = new Database($config['database']);
 
-if (isset($_SESSION['name'])){
-    dd( $_SESSION['name']);
-}
+$id = $_POST['id'];
+$name = $_POST['name'];
+$email = $_POST['email'];
 
 $sn = 1;
 // Query to fetch admin data based on provided id, name, and email
-$admins = $db->query("SELECT * FROM admin WHERE id = ? AND name = ? AND email = ?")->get(); // Assuming you want to fetch all matching rows
+// $admins = $db->query("SELECT * FROM admin WHERE id = ? AND name = ? AND email = ?")->get(); // Assuming you want to fetch all matching rows
 
 
- $admins =  $db->query("SELECT * FROM admin WHERE id = :id, name = :name, email = :email",[
-    'id' => $_SESSION['id'],
-    'name' => $_SESSION['name'],
-    'email' =>  $_SESSION['email']
+$user =  $db->query("SELECT * FROM admin WHERE id = :id, name = :name, email = :email", [
+    'id' => $id,
+    'name' => $name,
+    'email' =>  $email
 ])->findOrFail();
+dd($user);
 
 // Assuming you want to display the serial number (sn)
 $sn = 1;

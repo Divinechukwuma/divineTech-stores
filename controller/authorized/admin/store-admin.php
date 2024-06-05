@@ -2,7 +2,7 @@
 $config = require "config.php";
 $db = new Database($config['database']);
 
-$name = $_POST['name'];
+$name = $id['name'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 
