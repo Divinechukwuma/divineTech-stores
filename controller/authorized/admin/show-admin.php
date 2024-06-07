@@ -1,25 +1,32 @@
 <?php
+
 $config = require 'config.php';
 $db = new Database($config['database']);
 
-$id = $_POST['id'];
-$name = $_POST['name'];
-$email = $_POST['email'];
+// Fetch and validate GET parameters
+$id = isset($_GET['id']) ? $_GET['id'] : null;
+$name = isset($_GET['name']) ? $_GET['name']: null;
+$email = isset($_GET['email']) ? $_GET['email'] : null;
 
-$sn = 1;
-// Query to fetch admin data based on provided id, name, and email
-// $admins = $db->query("SELECT * FROM admin WHERE id = ? AND name = ? AND email = ?")->get(); // Assuming you want to fetch all matching rows
+// Validate parameters (optional, but recommended)
+if (!$id || !$name || !$email) {
+    die('Invalid parameters');
+}
 
+try {
+    // Prepare and execute the query
+    $user = $db->query("SELECT * FROM admin WHERE id = :id AND name = :name AND email = :email", [
+        'id' => $id,
+        'name' => urldecode($name),
+        'email' => urldecode($email)
+    ])->find();
+    
+    // Debugging purpose: print the fetched user
+    var_dump($user); // Replace dd($user) with var_dump($user) for better debugging
 
-$user =  $db->query("SELECT * FROM admin WHERE id = :id, name = :name, email = :email", [
-    'id' => $id,
-    'name' => $name,
-    'email' =>  $email
-])->findOrFail();
-dd($user);
-
-// Assuming you want to display the serial number (sn)
-$sn = 1;
+} catch (Exception $e) {
+    die('Admin not found');
+}
 
 // Include the view file
 require view("authorized/admin.view.php");

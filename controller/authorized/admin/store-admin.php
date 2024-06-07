@@ -2,7 +2,7 @@
 $config = require "config.php";
 $db = new Database($config['database']);
 
-$name = $id['name'];
+$name = $_POST['name'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 
@@ -13,5 +13,14 @@ $db->query('INSERT INTO admin (name,password,email) VALUES(:name,:password,:emai
 ]);
 
 
+$user['id'] = $_GET['id'];
+$user['name'] = $_GET['name'];
+$user['email'] = $_GET['email'];
 
-header('location: /webapps/divineTech-store/admin');
+$id = $user['id'];
+$name = urlencode($user['name']);
+$email = urlencode($user['email']);
+
+dd($name);
+
+header('location: /webapps/divineTech-store/admin?id=$id&name=$name&email=$email');

@@ -20,7 +20,7 @@
 
                 <th><?= $sn++ ?></th>
                 <td><?= htmlspecialchars( $admin['name']) ?></td>
-                <td><?= htmlspecialchars($admins['email']) ?></td>
+                <td><?= htmlspecialchars['ema']) il?></td>
                 <td><button class="bg-success text-light text-center rounded">Update Admin</button></td>
                 <td><button class="bg-danger text-light text-center rounded">Delete Admin</button></td>
             </tr>
