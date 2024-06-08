@@ -2,6 +2,7 @@
 
 $config = require 'config.php';
 $db = new Database($config['database']);
+$sn = 1;
 
 // Fetch and validate GET parameters
 $id = isset($_GET['id']) ? $_GET['id'] : null;
@@ -20,9 +21,9 @@ try {
         'name' => urldecode($name),
         'email' => urldecode($email)
     ])->find();
-    
+
     // Debugging purpose: print the fetched user
-    var_dump($user); // Replace dd($user) with var_dump($user) for better debugging
+    // var_dump($user); // Replace dd($user) with var_dump($user) for better debugging
 
 } catch (Exception $e) {
     die('Admin not found');
@@ -30,3 +31,17 @@ try {
 
 // Include the view file
 require view("authorized/admin.view.php");
+
+
+// $config = require 'config.php';
+// $db = new Database($config['database']);
+
+// $sn = 1;
+
+//  $admins =  $db->query("SELECT * FROM admin WHERE id = :id, name = :name, email = :email",[
+//     'id' => $_GET['id'],
+//     'name' => $_GET['name'],
+//     'email' =>  $_GET['email']
+// ])->findOrFail();
+
+// require view("authorized/admin.view.php");

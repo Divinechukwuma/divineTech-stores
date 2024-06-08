@@ -13,14 +13,11 @@ $db->query('INSERT INTO admin (name,password,email) VALUES(:name,:password,:emai
 ]);
 
 
-$user['id'] = $_GET['id'];
-$user['name'] = $_GET['name'];
-$user['email'] = $_GET['email'];
 
-$id = $user['id'];
-$name = urlencode($user['name']);
-$email = urlencode($user['email']);
+// $id = $user['id'];
+// $name = urlencode($user['name']);
+// $email = urlencode($user['email']);
 
-dd($name);
+// dd($name);
 
 header('location: /webapps/divineTech-store/admin?id=$id&name=$name&email=$email');
