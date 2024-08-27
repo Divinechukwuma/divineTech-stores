@@ -24,7 +24,7 @@ class Database
     public function query($sql, $params = [])
     {
         try {
-           // Prepare and execute query
+            // Prepare and execute query
             $this->statement = $this->conn->prepare($sql);
             $this->statement->execute($params);
             return $this;
@@ -34,7 +34,8 @@ class Database
         }
     }
 
-    public function lastInsertId() {
+    public function lastInsertId()
+    {
         return $this->conn->lastInsertId();
     }
 
@@ -46,7 +47,7 @@ class Database
             //Fetch all rows
             return $this->statement->fetchAll();
         } catch (PDOException $e) {
-           // Handle fetch error
+            // Handle fetch error
             die("Fetch failed: " . $e->getMessage());
         }
     }
@@ -54,10 +55,10 @@ class Database
     public function find()
     {
         try {
-           // Fetch a single row
+            // Fetch a single row
             return $this->statement->fetch();
         } catch (PDOException $e) {
-          //  Handle fetch error
+            //  Handle fetch error
             die("Fetch failed: " . $e->getMessage());
         }
     }
@@ -66,9 +67,9 @@ class Database
     {
         $result = $this->find();
         if (!$result) {
-          //  Handle not found
+            //  Handle not found
             die("Data not found");
         }
         return $result;
     }
-} 
+}
