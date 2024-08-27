@@ -5,19 +5,16 @@ $db = new Database($config['database']);
 $name = $_POST['name'];
 $password = $_POST['password'];
 $email = $_POST['email'];
+$confirmPassword = $_POST['confirmPassword'];
 
-$db->query('INSERT INTO admin (name,password,email) VALUES(:name,:password,:email)',[
+$db->query('INSERT INTO admin (name,password,email,confirmPassword) VALUES(:name,:password,:email,:confirmPassword)',[
     'name' => htmlspecialchars($name),
     'password' => htmlspecialchars(password_hash($password, PASSWORD_BCRYPT)),
+    'confirmPassword' => htmlspecialchars(password_hash($confirmPassword, PASSWORD_BCRYPT)),
     'email' => htmlspecialchars($email)
 ]);
 
 
+header('location: /webapps/divineTech-store/admin');
 
-// $id = $user['id'];
-// $name = urlencode($user['name']);
-// $email = urlencode($user['email']);
-
-// dd($name);
-
-header('location: /webapps/divineTech-store/admin?id=$id&name=$name&email=$email');
+ die();

@@ -14,9 +14,15 @@
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required>
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name='password' required>
+            <label for="InputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="InputPassword" name='password' required>
         </div>
+
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" name='ConfirmPassword' required>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

@@ -19,9 +19,9 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 $router->route($uri, $method);
 
-// $config = require('config.php');
-// $db = new Database($config['database']);
+//  $config = require('config.php');
+//  $db = new Database($config['database']);
 
-// $posts = $db->query('SELECT * FROM admin')->get();
+//  $posts = $db->query('SELECT * FROM admin')->get();
 
-// dd($posts);
+//  dd($posts);
