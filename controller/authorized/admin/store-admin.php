@@ -15,6 +15,6 @@ $db->query('INSERT INTO admin (name,password,email,confirmPassword) VALUES(:name
 ]);
 
 
-header('location: /webapps/divineTech-store/admin');
+header('location: controller/authorized/admin/show-admin.php');
 
  die();

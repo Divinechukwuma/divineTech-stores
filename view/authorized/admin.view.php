@@ -18,14 +18,21 @@
         <tbody class="table-group-divider">
             <tr>
 
-                <th><?= $sn++ ?></th>
-                <td><?= htmlspecialchars( $user['name']) ?></td>
-                <td><?= htmlspecialchars( $user['email'])?></td>
-                <td><button class="bg-success text-light text-center rounded">Update Admin</button></td>
-                <td><button class="bg-danger text-light text-center rounded">Delete Admin</button></td>
+                <?php 
+                if( $admins->num_rows > 0){
+                while ($admin = $admins) {  ?>
+
+                    <th><?= $sn++ ?></th>
+                    <td><?= htmlspecialchars($admin['name']) ?></td>
+                    <td><?= htmlspecialchars($admin['email']) ?></td>
+                    <td><button class="bg-success text-light text-center rounded">Update Admin</button></td>
+                    <td><button class="bg-danger text-light text-center rounded">Delete Admin</button></td>
             </tr>
         </tbody>
     </table>
+<?php  }}else{
+    echo "0 rows";
+} ?>
 
 </section>
 
