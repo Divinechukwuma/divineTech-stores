@@ -10,26 +10,22 @@ require base_path('core/session.php');
 require base_path("core/Router.php");
 require base_path("core/Database.php");
 
-// $router = new Router();
+ $router = new Router();
 
-// $routes = require 'routes.php';
+ $routes = require 'routes.php';
 
-// $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-// $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
+ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
-// $router->route($uri, $method);
+ $router->route($uri, $method);
 
 
 
-  $config = require('config.php');
-  $db = new Database($config['database']);
+//   $config = require('config.php');
+//   $db = new Database($config['database']);
 
-  $posts = $db->query("SELECT * FROM admin WHERE id = :id, name = :name, email = :email",[
-    'id' => $_GET['id'],
-    'name' => $_GET['name'],
-    'email' =>  $_GET['email']
-  ]);
+//   $posts = $db->query("SELECT id , name , email FROM admin ")->findOrFail();
 
-  dd($posts);
+//   dd($posts);
 
-  die();
+//   die();
