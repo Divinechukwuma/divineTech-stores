@@ -17,22 +17,19 @@
         </thead>
         <tbody class="table-group-divider">
             <tr>
-
-                <?php 
-                if( $admins->num_rows > 0){
-                while ($admin = $admins) {  ?>
-
-                    <th><?= $sn++ ?></th>
-                    <td><?= htmlspecialchars($admin['name']) ?></td>
-                    <td><?= htmlspecialchars($admin['email']) ?></td>
-                    <td><button class="bg-success text-light text-center rounded">Update Admin</button></td>
-                    <td><button class="bg-danger text-light text-center rounded">Delete Admin</button></td>
+                <?php
+                foreach ($admins as $admin) { ?>
+            <tr>
+                <th><?= $sn++ ?></th>
+                <td><?= htmlspecialchars($admin['name']) ?></td>
+                <td><?= htmlspecialchars($admin['email']) ?></td>
+                <td><button class="bg-success text-light text-center rounded">Update Admin</button></td>
+                <td><button class="bg-danger text-light text-center rounded">Delete Admin</button></td>
             </tr>
+        <?php
+                } ?>
         </tbody>
     </table>
-<?php  }}else{
-    echo "0 rows";
-} ?>
 
 </section>
 
